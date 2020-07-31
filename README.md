@@ -1,7 +1,7 @@
-#Configure Spacemacs
-
 ```bash
-git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-mkdir ~/.fonts
-git clone https://github.com/adobe-fonts/source-code-pro.git ~/.fonts/source-code-pro
+# Save Gnome Terminal settings:
+dconf dump /org/gnome/terminal/ > gnome_terminal_settings_backup.txt
+
+# Load the saved settings:
+dconf load /org/gnome/terminal/ < gnome_terminal_settings_backup.txt
 ```
