@@ -12,7 +12,7 @@ function parse_git_branch() {
 }
 
 new_line() {
-    printf "\n===> "
+    printf "\n└─▶ "
 }
 
 if [ "$color_prompt" = yes ]; then
