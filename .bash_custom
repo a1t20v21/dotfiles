@@ -12,8 +12,8 @@ function parse_git_branch() {
 }
 
 new_line() {
-    printf "\n\033[38;5;113m└─▶ "
-    printf "\e[0m"
+    printf "\n$"
+    # printf "\e[0m"
 }
 
 if [ "$color_prompt" = yes ]; then
