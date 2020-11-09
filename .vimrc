@@ -84,6 +84,12 @@ Plug 'morhetz/gruvbox'
 "
 Plug 'camspiers/animate.vim'
 Plug 'camspiers/lens.vim'
+
+" Terraform plugin
+Plug 'https://github.com/hashivim/vim-terraform.git'
+"
+" Puppet plugin
+Plug 'https://github.com/rodjek/vim-puppet.git'
 "
 call plug#end()
 
