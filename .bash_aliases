@@ -1,3 +1,5 @@
-alias c58k='(cd ~/workspace/linux/linux_kernel/linux-5.8-rc3; cscope -d -i files)'
+alias c510k='(cd ~/workspace/linux_kernel/linux; cscope -d -i files)'
 alias work='cd ~/766F6E616765'
+alias repo-ot='cd ~/766F6E616765/ops-terraform'
+alias repo-pm='cd ~/766F6E616765/puppet-master'
 alias gcloud='(google-drive-ocamlfuse ~/googledrive; gopen ~/googledrive)'

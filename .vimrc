@@ -8,6 +8,15 @@ set number
 set encoding=utf-8
 set t_Co=256
 syntax on
+colo pablo
+
+set fileencoding=utf-8
+
+autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
+
+set undofile " Maintain undo history between sessions
+set undodir=~/.vim/undodir
 
 set colorcolumn=110
 highlight ColorColumn ctermbg=darkgray
@@ -17,6 +26,7 @@ source ~/.vim/plugins/cscope_maps.vim
 
 set nocompatible				" be iMproved, required
 filetype plugin indent on		" required
+set backspace=indent,eol,start
 
 call plug#begin('~/.vim/plugged')
 "{{ Configuring NerdTree
@@ -91,9 +101,53 @@ Plug 'https://github.com/hashivim/vim-terraform.git'
 " Puppet plugin
 Plug 'https://github.com/rodjek/vim-puppet.git'
 "
+"{{ Golang plugin
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+  let g:go_fmt_command = "goimports" 
+  let g:go_auto_type_info = 1
+"}}
+"
+"{{ air-line
+Plug 'vim-airline/vim-airline'
+	let g:airline_powerline_fonts = 1
+
+	if !exists('g:airline_symbols')
+		let g:airline_symbols = {}
+	endif
+
+	" unicode symbols
+	let g:airline_left_sep = '»'
+	let g:airline_left_sep = '▶'
+	let g:airline_right_sep = '«'
+	let g:airline_right_sep = '◀'
+	let g:airline_symbols.linenr = '␊'
+	let g:airline_symbols.linenr = '␤'
+	let g:airline_symbols.linenr = '¶'
+	let g:airline_symbols.branch = '⎇'
+	let g:airline_symbols.paste = 'ρ'
+	let g:airline_symbols.paste = 'Þ'
+	let g:airline_symbols.paste = '∥'
+	let g:airline_symbols.whitespace = 'Ξ'
+
+	" airline symbols
+	let g:airline_left_sep = ''
+	let g:airline_left_alt_sep = ''
+	let g:airline_right_sep = ''
+	let g:airline_right_alt_sep = ''
+	let g:airline_symbols.branch = ''
+	let g:airline_symbols.readonly = ''
+	let g:airline_symbols.linenr = ''
+"}}
+
+" Ruby plugin
+Plug 'vim-ruby/vim-ruby'
+
+" Groovy plugin
+Plug 'vim-scripts/groovy.vim'
+
 call plug#end()
 
-colorscheme gruvbox
+" colorscheme gruvbox
 
 nnoremap <s-tab> za
 
